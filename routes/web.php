@@ -37,6 +37,20 @@ Route::get('/product', function () {
     ]);
 });
 
+//categories
+Route::get('/categories', function () {
+    return view('categories', [
+        "title" => "Categories"
+    ]);
+});
+
+//about
+Route::get('/about', function () {
+    return view('about', [
+        "title" => "About Galea Helmet Gallery"
+    ]);
+});
+
 //login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);

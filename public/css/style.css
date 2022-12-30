@@ -1,0 +1,22 @@
+.bg-galea {
+    background: #14243c;
+    color: aliceblue;
+}
+
+.btn-main {
+    background: #14243c;
+    color: aliceblue;
+}
+.btn-main:hover {
+    background: #0c4a6e;
+    color: aliceblue;
+}
+
+.btn-sec {
+    background: #0c4a6e;
+    color: aliceblue;
+}
+.btn-sec:hover {
+    background: #14243c;
+    color: aliceblue;
+}
