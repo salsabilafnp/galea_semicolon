@@ -11,7 +11,9 @@
   {{-- bootstrap icons --}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   {{-- My Style --}}
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+  {{-- Logo Web --}}
+  <link href="/img/galea-logo only.png" rel="shortcut icon">
 
 </head>
 
@@ -19,7 +21,7 @@
 
   @include('partials.navbar')
 
-  <div class="container mt-5">
+  <div class="container my-5 pt-5">
     @yield('container')
   </div>
 

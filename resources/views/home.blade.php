@@ -2,7 +2,7 @@
 
 @section('container')
   {{-- Info Categories of Products that available --}}
-  <div id="carouselExampleCaptions" class="carousel slide pt-4" data-bs-ride="false">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"
         aria-label="Slide 1"></button>
@@ -44,11 +44,11 @@
 
   {{-- Newest Products --}}
   <div class="new-products text-center my-5">
-    <h3 class="display-5 text-center">Our New Products</h3>
+    <h3 class="display-5">Our New Products</h3>
     <div class="row justify-content-around">
       @for ($i = 0; $i < 4; $i++)
         <div class="col-md-3 col-sm-5">
-          <div class="card p-2 mb-2 text-center">
+          <div class="card border-0 shadow p-2 mb-2 text-center">
             {{-- Pindah ke halaman penjelasan suatu produk --}}
             <a href="/product" class="text-decoration-none text-dark">
               {{-- Gambar Produk --}}
@@ -57,7 +57,7 @@
               <h6>Harga</h6>
             </a>
             {{-- add-to-cart --}}
-            <a href="/" class="btn btn-primary">
+            <a href="/" class="btn btn-sec">
               <i class="bi bi-cart-plus"></i> Add To Cart
             </a>
           </div>
@@ -71,25 +71,25 @@
   </div>
 
   {{-- Some Products for Categories --}}
-  <div class="categories">
+  <div class="categories my-5">
     {{-- Heading for Category Section --}}
-    <h3 class="display-6 text-center">Our Products by Categories</h3>
-
+    <h3 class="display-6 text-center">Our Products</h3>
+    
     {{-- Category 1, nanti ganti namanya sesuai kategori yang ada --}}
     <div class="category-1 text-center my-3">
       <div class="row justify-content-evenly">
-        <div class="col-md-2 col-sm-3 align-self-center">
-          <div class="card p-2 mb-2 text-center">
+        <div class="col-md-2 align-self-center">
+          <div class="card border-0 shadow p-2 mb-2 text-center">
             {{-- Gambar untuk Category 1 --}}
             <img src="https://source.unsplash.com/100x100?motorcycle" class="card-img my-1">
             {{-- Lihat lebih banyak berdasarkan kategori 1 --}}
-            <a href="/" class="btn btn-dark">Category 1</a>
+            <a href="/" class="btn btn-main">Category 1</a>
           </div>
         </div>
         {{-- Produk yang tampil berdasarkan kategori 1 --}}
         @for ($i = 0; $i < 4; $i++)
           <div class="col-md-2 col-sm-4">
-            <div class="card p-2 mb-2 text-center">
+            <div class="card border-0 shadow p-2 mb-2 text-center">
               {{-- Pindah ke halaman penjelasan suatu produk --}}
               <a href="/product" class="text-decoration-none text-dark">
                 {{-- Gambar Produk --}}
@@ -98,7 +98,7 @@
                 <h6>Harga</h6>
               </a>
               {{-- add-to-cart --}}
-              <a href="/" class="btn btn-primary">
+              <a href="/" class="btn btn-sec">
                 <i class="bi bi-cart-plus"></i> Add To Cart
               </a>
             </div>
@@ -110,18 +110,18 @@
     {{-- Category 2, nanti ganti namanya sesuai kategori yang ada --}}
     <div class="category-2 text-center my-3">
       <div class="row justify-content-evenly">
-        <div class="col-md-2 col-sm-3 align-self-center">
-          <div class="card p-2 mb-2 text-center">
+        <div class="col-md-2 align-self-center">
+          <div class="card border-0 shadow p-2 mb-2 text-center">
             {{-- Gambar untuk Category 2 --}}
             <img src="https://source.unsplash.com/100x100?helmet" class="card-img my-1">
             {{-- Lihat lebih banyak berdasarkan kategori 1 --}}
-            <a href="/" class="btn btn-dark">Category 2</a>
+            <a href="/" class="btn btn-main">Category 2</a>
           </div>
         </div>
         {{-- Produk yang tampil berdasarkan kategori 2 --}}
         @for ($i = 0; $i < 4; $i++)
-          <div class="col-md-2 col-sm-4">
-            <div class="card p-2 mb-2 text-center">
+        <div class="col-md-2 col-sm-4">
+          <div class="card border-0 shadow p-2 mb-2 text-center">
               {{-- Pindah ke halaman penjelasan suatu produk --}}
               <a href="/product" class="text-decoration-none text-dark">
                 {{-- Gambar Produk --}}
@@ -130,7 +130,7 @@
                 <h6>Harga</h6>
               </a>
               {{-- add-to-cart --}}
-              <a href="/" class="btn btn-primary">
+              <a href="/" class="btn btn-sec">
                 <i class="bi bi-cart-plus"></i> Add To Cart
               </a>
             </div>
@@ -138,5 +138,26 @@
         @endfor
       </div>
     </div>
+  </div>
+  
+  {{-- Testimonials --}}
+  <div class="row justify-content-center align-items-center mx-sm-3">
+    <h3 class="display-6 text-center">Testimonial</h3>
+    @for ($i = 0; $i < 4; $i++)
+      <div class="col-md-3 col-sm-6 my-3">
+        <div class="card shadow border-0 bg-galea">
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <img src="https://picsum.photos/30/30?random" alt="name" class="rounded-circle me-2">
+              <h5 class="mt-2">Adam Watt</h5>
+            </div>
+            <div class="pt-2 pb-1">
+              <p class="text-start">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus, nisi?</p>
+              <p class="text-muted text-end fst-italic">23 May 2021</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    @endfor
   </div>
 @endsection
