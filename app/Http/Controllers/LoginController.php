@@ -3,25 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    //
+    //index
     public function index()
     {
         return view('login.index', [
             'title' => 'Login',
-            'active' => 'Login'
+            'active' => 'login'
         ]);
     }
 
-
-
+    //auth
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|email:dns',
             'password' => 'required'
         ]);
 

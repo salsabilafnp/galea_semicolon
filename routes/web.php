@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,17 +36,10 @@ Route::get('/product', function () {
     ]);
 });
 
-//categories
-Route::get('/categories', function () {
-    return view('categories', [
-        "title" => "Categories"
-    ]);
-});
-
 //about
 Route::get('/about', function () {
     return view('about', [
-        "title" => "About Galea Helmet Gallery"
+        "title" => "About Galea"
     ]);
 });
 
@@ -57,5 +49,5 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 //register
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);

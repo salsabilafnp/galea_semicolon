@@ -14,14 +14,20 @@
   <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
   {{-- Logo Web --}}
   <link href="/img/galea-logo.png" rel="shortcut icon">
-
 </head>
 
 <body>
 
-  @include('partials.navbar')
+  <nav class="navbar navbar-dark bg-galea">
+    <div class="container justify-content-center">
+      <a class="navbar-brand" href="/">
+        <img src="/img/galea.png" alt="galea-icon" style="max-width: 2em;">
+        Galea Helmet Gallery
+      </a>
+    </div>
+  </nav>
 
-  <div class="container my-5 pt-5">
+  <div class="container my-5">
     @yield('container')
   </div>
 
