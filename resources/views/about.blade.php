@@ -11,7 +11,7 @@
         ditawarkan yaitu berbagai macam dan pilihan helmet.</p>
     </div>
     <div class="col-md-5">
-      <img src="/img/galea.png" class="img-fluid rounded d-sm-none d-md-block">
+      <img src="/img/galea.png" class="img-fluid rounded-circle d-sm-none d-md-block bg-galea">
     </div>
   </div>
 

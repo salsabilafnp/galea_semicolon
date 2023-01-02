@@ -29,31 +29,8 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="/dashboard">
-                  <i class="bi bi-layout-text-window-reverse"></i> My Dashboard
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li>
-                <a class="dropdown-item" href="/user-management">
-                  <i class="bi bi-layout-text-window-reverse"></i> User Management
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/our-products">
-                  <i class="bi bi-layout-text-window-reverse"></i> Our Products
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/payments">
-                  <i class="bi bi-layout-text-window-reverse"></i> Payment Methods
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/orders">
-                  <i class="bi bi-layout-text-window-reverse"></i> Orders
+                <a class="dropdown-item" href="/profile">
+                  <i class="bi bi-person-circle"></i> My Profile
                 </a>
               </li>
               <li>
@@ -71,14 +48,11 @@
           </li>
         @else
           <li class="nav-item me-2">
-            <a href="/register" class="nav-link {{ Request::is('register') ? 'active' : '' }}">
-              <i class="bi bi-box-arrow-in-right"></i> Register
-            </a>
+            <a href="/register" class="nav-link {{ Request::is('register') ? 'active' : '' }}">Register</a>
           </li>
           <li class="nav-item">
-            <a href="/login" class="btn btn-light text-dark nav-link {{ Request::is('login') ? 'active' : '' }}">
-              <i class="bi bi-box-arrow-in-right"></i> Login
-            </a>
+            <a href="/login"
+              class="btn btn-light text-dark nav-link {{ Request::is('login') ? 'active' : '' }}">Login</a>
           </li>
         @endauth
       </ul>
