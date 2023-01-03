@@ -61,7 +61,9 @@
         @foreach ($products as $product)
           <tr>
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $product->gambar }}</td>
+            <td>
+              <img width="100" height="100" src="/products/{{ $product->gambar }}" alt="{{ $product->gambar }}">
+            </td>
             <td>{{ $product->nama_produk }}</td>
             <td class="text-uppercase">{{ $product->kategori }}</td>
             <td>Rp {{ $product->harga }}</td>
@@ -73,7 +75,7 @@
               <a href="/dashboard/products/{{ $product->slug }}/edit" class="badge bg-warning">
                 <i class="bi bi-pencil-square"></i>
               </a>
-              <form action="/dashboard/products/{{ $product->slug }}" method="POST" class="d-inline">
+              <form action="/dashboard/products/{{ $product->id }}" method="POST" class="d-inline">
                 @method('delete')
                 @csrf
                 <button class="badge bg-danger border-0" onclick="return confirm('Are you sure to delete this?')">

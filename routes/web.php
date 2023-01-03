@@ -68,4 +68,6 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
 
     //our product
     Route::resource('/dashboard/products', DashboardProductsController::class);
+    //slug
+    Route::get('/dashboard/products/checkSlug', [DashboardProductsController::class, 'checkSlug']);
 });
