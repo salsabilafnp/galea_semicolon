@@ -22,30 +22,61 @@
       </ul>
       <ul class="navbar-nav">
         @auth
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Welcome back, {{ auth()->user()->name }}
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="/profile">
-                  <i class="bi bi-person-circle"></i> My Profile
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li>
-                <form action="/logout" method="post">
-                  @csrf
-                  <button class="dropdown-item" type="submit">
-                    <i class="bi bi-box-arrow-right"></i> Logout
-                  </button>
-                </form>
-              </li>
-            </ul>
-          </li>
+          @if (Auth::user()->role == 'admin')
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{ auth()->user()->name }}
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/dashboard">
+                    <i class="bi bi-grid-fill"></i> Dashboard
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <form action="/logout" method="post">
+                    @csrf
+                    <button class="dropdown-item" type="submit">
+                      <i class="bi bi-box-arrow-right"></i> Logout
+                    </button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+          @else
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{ auth()->user()->name }}
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/profile">
+                    <i class="bi bi-person-circle"></i> My Profile
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/cart"><i
+                      class="bi bi-cart-fill"></i> Keranjang</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <form action="/logout" method="post">
+                    @csrf
+                    <button class="dropdown-item" type="submit">
+                      <i class="bi bi-box-arrow-right"></i> Logout
+                    </button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+          @endif
         @else
           <li class="nav-item me-2">
             <a href="/register" class="nav-link {{ Request::is('register') ? 'active' : '' }}">Register</a>

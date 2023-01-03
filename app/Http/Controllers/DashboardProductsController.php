@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DashboardProductsController extends Controller
 {
@@ -14,7 +15,10 @@ class DashboardProductsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.products.index');
+        return view('dashboard.products.index', [
+            "title" => "Produk Galea",
+            "products" => Product::all()
+        ]);
     }
 
     /**
@@ -46,7 +50,9 @@ class DashboardProductsController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('dashboard.products.show', [
+            "title" => "Produk Satuan Galea"
+        ]);
     }
 
     /**
