@@ -5,6 +5,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardOrdersController;
 use App\Http\Controllers\DashboardProductsController;
@@ -65,6 +66,9 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 // Cart
 Route::get('/cart', [CartController::class, 'index']);
+
+// Checkout
+Route::get('/checkout', [CheckoutController::class, 'index']);
 
 //admin
 Route::middleware(['auth', 'checkRole:admin'])->group(function () {
