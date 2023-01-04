@@ -33,7 +33,7 @@ class DashboardProductsController extends Controller
     public function create()
     {
         return view('dashboard.products.create', [
-            "title" => "Produk Galea"
+            "title" => "Tambah Produk"
         ]);
     }
 
@@ -100,7 +100,7 @@ class DashboardProductsController extends Controller
     public function edit(Product $product)
     {
         return view('dashboard.products.edit', [
-            "title" => $product->nama_produk,
+            "title" => "Ubah" . $product->nama_produk,
             "products" => $product
         ]);
     }
