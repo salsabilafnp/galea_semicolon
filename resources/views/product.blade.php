@@ -26,6 +26,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <p class="about">The AGV Pista GP RR Helmet is an exact replica of helmets worn by
                                     world
                                     championship racers. It meets stringent FIM Racing Homologation standards and
@@ -60,6 +61,7 @@
                                             value="XL"> <span>XL</span> </label> <label class="radio"> <input
                                             type="radio" name="size" value="XXL">
                                         <span>XXL</span> </label>
+
                                 </div>
                                 <div class="cart mt-4 align-items-center"> <button
                                         class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> <i
