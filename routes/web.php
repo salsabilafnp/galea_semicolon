@@ -34,7 +34,7 @@ Route::get('/', function () {
 });
 
 //products
-Route::get('/productss', function () {
+Route::get('/products', function () {
     return view('products', [
         "title" => "Products"
     ]);
@@ -43,7 +43,7 @@ Route::get('/productss', function () {
 //product
 Route::get('/product', function () {
     return view('product', [
-        "title" => "Name of Product"
+        "title" => "Name of Product",
     ]);
 });
 
