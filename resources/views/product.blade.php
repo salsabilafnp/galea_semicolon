@@ -26,27 +26,40 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="about">The AGV Pista GP RR Helmet is an exact replica of helmets worn by world
-                                    championship racers. It meets stringent FIM Racing Homologation standards and provides
-                                    the highest level of protection, even against glancing impacts that can cause rotational
-                                    motion. Carbon fiber molded into an innovative shape lets the helmet move through air
-                                    effortlessly. AGV Integrated Ventilation System (IVS) uses 5 large front metal air vents
-                                    and 2 rear extractors to let air pass through the helmet freely. Four shell sizes used
-                                    across 7 different helmet sizes get a closer fitting shell compared to other helmets.
+                                <p class="about">The AGV Pista GP RR Helmet is an exact replica of helmets worn by
+                                    world
+                                    championship racers. It meets stringent FIM Racing Homologation standards and
+                                    provides
+                                    the highest level of protection, even against glancing impacts that can cause
+                                    rotational
+                                    motion. Carbon fiber molded into an innovative shape lets the helmet move through
+                                    air
+                                    effortlessly. AGV Integrated Ventilation System (IVS) uses 5 large front metal air
+                                    vents
+                                    and 2 rear extractors to let air pass through the helmet freely. Four shell sizes
+                                    used
+                                    across 7 different helmet sizes get a closer fitting shell compared to other
+                                    helmets.
                                     The helmet was designed for an aggressive tucked racing position with a face shield
-                                    allowing for a maximum vertical view and wide horizontal view. AGV patented Visor Lock
-                                    System (VLS) decreases the chance that the face shield comes opens in a crash. With a
-                                    fit developed for MotoGP racers, the Pista GP RR lining allows for an optimized fit and
-                                    positioning on your head. Everything about the AGV Pista GP RR Helmet is designed for
+                                    allowing for a maximum vertical view and wide horizontal view. AGV patented Visor
+                                    Lock
+                                    System (VLS) decreases the chance that the face shield comes opens in a crash. With
+                                    a
+                                    fit developed for MotoGP racers, the Pista GP RR lining allows for an optimized fit
+                                    and
+                                    positioning on your head. Everything about the AGV Pista GP RR Helmet is designed
+                                    for
                                     high speed track performance.</p>
                                 <div class="sizes mt-5">
                                     <h6 class="text-uppercase">Size</h6> <label class="radio"> <input type="radio"
                                             name="size" value="S" checked> <span>S</span> </label> <label
-                                        class="radio"> <input type="radio" name="size" value="M"> <span>M</span>
+                                        class="radio"> <input type="radio" name="size" value="M">
+                                        <span>M</span>
                                     </label> <label class="radio"> <input type="radio" name="size" value="L">
                                         <span>L</span> </label> <label class="radio"> <input type="radio" name="size"
                                             value="XL"> <span>XL</span> </label> <label class="radio"> <input
-                                            type="radio" name="size" value="XXL"> <span>XXL</span> </label>
+                                            type="radio" name="size" value="XXL">
+                                        <span>XXL</span> </label>
                                 </div>
                                 <div class="cart mt-4 align-items-center"> <button
                                         class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> <i
