@@ -48,47 +48,23 @@
 
                     <!-- store products -->
                     <div class="categories my-2">
-<<<<<<< HEAD
-                        {{-- Heading for Category Section --}}
-
-
-                        {{-- Category 1, nanti ganti namanya sesuai kategori yang ada --}}
-                        <div class="category-1 text-center my-3">
-                            <div class="row justify-content-evenly">
-
-                                {{-- Produk yang tampil berdasarkan kategori 1 --}}
-
-                                <div class="col-md-3 col-sm-4">
-                                    <div class="card border-0 shadow p-2 mb-2 text-center">
-                                        {{-- Pindah ke halaman penjelasan suatu produk --}}
-                                        <a href="/product" class="text-decoration-none text-dark">
-                                            {{-- Gambar Produk --}}
-=======
 
 
 
 
                         <div class="category-1 text-center my-3">
                             <div class="row justify-content-evenly">
-
-
-
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card border-0 shadow p-2 mb-2 text-center">
 
                                         <a href="/product" class="text-decoration-none text-dark">
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                             <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
                                                 class="card-img my-1">
                                             <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
                                             <h6>Rp 15.999.999</h6>
                                         </a>
-<<<<<<< HEAD
-                                        {{-- add-to-cart --}}
-=======
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                         <a href="/" class="btn btn-sec">
                                             <i class="bi bi-cart-plus"></i> Add To Cart
                                         </a>
@@ -96,25 +72,15 @@
                                 </div>
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card border-0 shadow p-2 mb-2 text-center">
-<<<<<<< HEAD
-                                        {{-- Pindah ke halaman penjelasan suatu produk --}}
-                                        <a href="/product" class="text-decoration-none text-dark">
-                                            {{-- Gambar Produk --}}
-=======
 
                                         <a href="/product" class="text-decoration-none text-dark">
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                             <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
                                                 class="card-img my-1">
                                             <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
                                             <h6>Rp 15.999.999</h6>
                                         </a>
-<<<<<<< HEAD
-                                        {{-- add-to-cart --}}
-=======
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                         <a href="/" class="btn btn-sec">
                                             <i class="bi bi-cart-plus"></i> Add To Cart
                                         </a>
@@ -122,25 +88,15 @@
                                 </div>
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card border-0 shadow p-2 mb-2 text-center">
-<<<<<<< HEAD
-                                        {{-- Pindah ke halaman penjelasan suatu produk --}}
-                                        <a href="/product" class="text-decoration-none text-dark">
-                                            {{-- Gambar Produk --}}
-=======
 
                                         <a href="/product" class="text-decoration-none text-dark">
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                             <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
                                                 class="card-img my-1">
                                             <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
                                             <h6>Rp 15.999.999</h6>
                                         </a>
-<<<<<<< HEAD
-                                        {{-- add-to-cart --}}
-=======
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                         <a href="/" class="btn btn-sec">
                                             <i class="bi bi-cart-plus"></i> Add To Cart
                                         </a>
@@ -148,25 +104,15 @@
                                 </div>
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card border-0 shadow p-2 mb-2 text-center">
-<<<<<<< HEAD
-                                        {{-- Pindah ke halaman penjelasan suatu produk --}}
-                                        <a href="/product" class="text-decoration-none text-dark">
-                                            {{-- Gambar Produk --}}
-=======
 
                                         <a href="/product" class="text-decoration-none text-dark">
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                             <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
                                                 class="card-img my-1">
                                             <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
                                             <h6>Rp 15.999.999</h6>
                                         </a>
-<<<<<<< HEAD
-                                        {{-- add-to-cart --}}
-=======
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                         <a href="/" class="btn btn-sec">
                                             <i class="bi bi-cart-plus"></i> Add To Cart
                                         </a>
@@ -174,25 +120,15 @@
                                 </div>
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card border-0 shadow p-2 mb-2 text-center">
-<<<<<<< HEAD
-                                        {{-- Pindah ke halaman penjelasan suatu produk --}}
-                                        <a href="/product" class="text-decoration-none text-dark">
-                                            {{-- Gambar Produk --}}
-=======
 
                                         <a href="/product" class="text-decoration-none text-dark">
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                             <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
                                                 class="card-img my-1">
                                             <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
                                             <h6>Rp 15.999.999</h6>
                                         </a>
-<<<<<<< HEAD
-                                        {{-- add-to-cart --}}
-=======
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                         <a href="/" class="btn btn-sec">
                                             <i class="bi bi-cart-plus"></i> Add To Cart
                                         </a>
@@ -200,25 +136,15 @@
                                 </div>
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card border-0 shadow p-2 mb-2 text-center">
-<<<<<<< HEAD
-                                        {{-- Pindah ke halaman penjelasan suatu produk --}}
-                                        <a href="/product" class="text-decoration-none text-dark">
-                                            {{-- Gambar Produk --}}
-=======
 
                                         <a href="/product" class="text-decoration-none text-dark">
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                             <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
                                                 class="card-img my-1">
                                             <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
                                             <h6>Rp 15.999.999</h6>
                                         </a>
-<<<<<<< HEAD
-                                        {{-- add-to-cart --}}
-=======
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                         <a href="/" class="btn btn-sec">
                                             <i class="bi bi-cart-plus"></i> Add To Cart
                                         </a>
@@ -226,25 +152,15 @@
                                 </div>
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card border-0 shadow p-2 mb-2 text-center">
-<<<<<<< HEAD
-                                        {{-- Pindah ke halaman penjelasan suatu produk --}}
-                                        <a href="/product" class="text-decoration-none text-dark">
-                                            {{-- Gambar Produk --}}
-=======
 
                                         <a href="/product" class="text-decoration-none text-dark">
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                             <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
                                                 class="card-img my-1">
                                             <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
                                             <h6>Rp 15.999.999</h6>
                                         </a>
-<<<<<<< HEAD
-                                        {{-- add-to-cart --}}
-=======
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                         <a href="/" class="btn btn-sec">
                                             <i class="bi bi-cart-plus"></i> Add To Cart
                                         </a>
@@ -252,25 +168,143 @@
                                 </div>
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card border-0 shadow p-2 mb-2 text-center">
-<<<<<<< HEAD
-                                        {{-- Pindah ke halaman penjelasan suatu produk --}}
-                                        <a href="/product" class="text-decoration-none text-dark">
-                                            {{-- Gambar Produk --}}
-=======
 
                                         <a href="/product" class="text-decoration-none text-dark">
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
                                             <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
                                                 class="card-img my-1">
                                             <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
                                             <h6>Rp 15.999.999</h6>
                                         </a>
-<<<<<<< HEAD
-                                        {{-- add-to-cart --}}
-=======
 
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
                                         <a href="/" class="btn btn-sec">
                                             <i class="bi bi-cart-plus"></i> Add To Cart
                                         </a>
@@ -279,13 +313,6 @@
 
                             </div>
                         </div>
-
-<<<<<<< HEAD
-                        {{-- Category 2, nanti ganti namanya sesuai kategori yang ada --}}
-=======
-
->>>>>>> 21ee0969ec4b58dee6c0519c6aa28a461a9f9e7a
-
                     </div>
                     <!-- /store products -->
                 </div>
