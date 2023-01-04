@@ -46,7 +46,7 @@
 
     {{-- Newest Products --}}
     <div class="new-products text-center my-5">
-        <h3 class="display-5">Our New Products</h3>
+        <h3 class="display-5 pb-4">Our New Products</h3>
         <div class="row justify-content-around">
             @foreach ($products as $barang)
                 <div class="col-md-3 col-sm-5">
@@ -67,7 +67,7 @@
             @endforeach
         </div>
         {{-- go to products page --}}
-        <p class="fw-bold">Want to see more products?
+        <p class="fw-bold pt-3">Want to see more products?
             <a href="/products" class="text-decoration-none">See more ...</a>
         </p>
     </div>
@@ -75,7 +75,7 @@
     {{-- Some Products for Categories --}}
     <div class="categories my-5">
         {{-- Heading for Category Section --}}
-        <h3 class="display-6 text-center">Our Products</h3>
+        <h3 class="display-6 text-center pt-5">Our Products</h3>
 
         {{-- Category 1, nanti ganti namanya sesuai kategori yang ada --}}
         <div class="category-1 text-center my-3">

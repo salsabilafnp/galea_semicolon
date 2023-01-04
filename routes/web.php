@@ -54,6 +54,13 @@ Route::get('/about', function () {
     ]);
 });
 
+//setting
+Route::get('/setting', function () {
+    return view('setting', [
+        "title" => "Setting Profile"
+    ]);
+});
+
 //login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -96,4 +103,14 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::get('/dashboard/orders/{orders:kode_pesanan}/edit', [DashboardOrdersController::class, 'edit']);
     //delete
     Route::post('/dashboard/orders/{orders:kode_pesanan}', [DashboardOrdersController::class, 'delete']);
+});
+
+//user
+Route::middleware(['auth', 'checkRole:user'])->group(function () {
+    //setting
+    Route::get('/setting', function () {
+        return view('setting', [
+            "title" => "Setting Profile"
+        ]);
+    });
 });
