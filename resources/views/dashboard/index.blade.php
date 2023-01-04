@@ -9,7 +9,7 @@
           <div class="col-md-8 col-sm-7">
             <div class="card-body">
               <h3 class="card-title">Produk</h3>
-              <p class="card-text text-success fw-bold">Tersedia: 10</p>
+              {{--<p class="card-text text-success fw-bold">Tersedia: {{ $stok_produk_tersedia }}</p>--}}
             </div>
           </div>
           <div class="col-md-4 col-sm-3 text-center">
@@ -24,7 +24,7 @@
           <div class="col-md-8 col-sm-7">
             <div class="card-body">
               <h3 class="card-title">Produk</h3>
-              <p class="card-text text-danger fw-bold">Habis: 10</p>
+              {{--<p class="card-text text-danger fw-bold">Habis: {{ $stok_produk_habis }}</p>--}}
             </div>
           </div>
           <div class="col-md-4 col-sm-3 text-center">
@@ -95,16 +95,16 @@
           <thead>
             <tr>
               <th scope="col">No.</th>
-              <th scope="col">Nama</th>
+              <th scope="col">Nama Admin</th>
             </tr>
           </thead>
           <tbody>
-            @for ($i = 1; $i <= 5; $i++)
+            @foreach ($admin as $adm)
               <tr>
-                <th scope="row">{{ $i }}</th>
-                <td>Mark</td>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $adm->name }}</td>
               </tr>
-            @endfor
+            @endforeach
           </tbody>
         </table>
       </div>

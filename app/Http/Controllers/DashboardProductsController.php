@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardProductsController extends Controller
 {
@@ -20,7 +19,9 @@ class DashboardProductsController extends Controller
     {
         return view('dashboard.products.index', [
             "title" => "Produk Galea",
-            "products" => Product::all()
+            "products" => Product::all(),
+            "stok_produk_tersedia" => Product::where('banyak_produk', '>', 0)->get()->count(),
+            "stok_produk_habis" => Product::where('banyak_produk', '=', 0)->get()->count()
         ]);
     }
 
@@ -44,6 +45,7 @@ class DashboardProductsController extends Controller
      */
     public function store(Request $request)
     {
+
         //validate form
         $validatedData = $request->validate([
             'nama_produk'           => 'required',
@@ -51,14 +53,14 @@ class DashboardProductsController extends Controller
             'banyak_produk'         => 'required',
             'kategori'              => 'required',
             'deskripsi'             => 'required',
-            'gambar'                => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'gambar'                => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $validatedData['slug'] = Str::slug($request->nama_produk, '-');
 
         //upload image
         $gambar = $request->file('gambar');
-        $gambar->store('products', $gambar->hashName());
+        $gambar->storeAs('public/products/', $gambar->hashName());
 
         //create post
         Product::create([
@@ -84,7 +86,8 @@ class DashboardProductsController extends Controller
     public function show(Product $product)
     {
         return view('dashboard.products.show', [
-            "title" => $product->nama_produk
+            "title" => $product->nama_produk,
+            "products" => $product
         ]);
     }
 
@@ -97,7 +100,8 @@ class DashboardProductsController extends Controller
     public function edit(Product $product)
     {
         return view('dashboard.products.edit', [
-            "title" => $product->nama_produk
+            "title" => $product->nama_produk,
+            "products" => $product
         ]);
     }
 
@@ -117,8 +121,7 @@ class DashboardProductsController extends Controller
             'banyak_produk'         => 'required',
             'kategori'              => 'required',
             'deskripsi'             => 'required',
-            'gambar'                => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'slug'                   => 'required',
+            'gambar'                => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         //check if image is uploaded
@@ -138,12 +141,11 @@ class DashboardProductsController extends Controller
                 'banyak_produk'     => $request->banyak_produk,
                 'kategori'     => $request->kategori,
                 'deskripsi'     => $request->deskripsi,
-                'gambar'     => $gambar->hashName(),
-                'slug'   => $request->slug,
+                'gambar'     => $gambar->hashName()
             ]);
         } else {
 
-            //update post without gambar
+            //update produk without gambar
             $product->update([
                 'title'     => $request->title,
                 'content'   => $request->content
@@ -151,7 +153,7 @@ class DashboardProductsController extends Controller
         }
 
         //redirect to index
-        return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('products.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
@@ -165,11 +167,5 @@ class DashboardProductsController extends Controller
         Product::destroy($product->id);
 
         return redirect()->route('products.index')->with(['success' => 'Data Berhasil Dihapus!']);
-    }
-
-    public function checkSlug(Request $request)
-    {
-        $slug = SlugService::createSlug(Product::class, 'slug', $request->nama_produk);
-        return response()->json(['slug' => $slug]);
     }
 }
