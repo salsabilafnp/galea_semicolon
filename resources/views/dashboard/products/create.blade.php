@@ -71,7 +71,9 @@
           @enderror
         </div>
 
-        <button type="submit" class="btn btn-main">Tambah Post</button>
+        <button type="submit" class="btn btn-main">Tambah Produk</button>
+        <a href="/dashboard/products" class="btn btn-sec">Kembali</a>
+
       </form>
     </div>
   </div>

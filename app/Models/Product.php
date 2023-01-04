@@ -4,20 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 
 class Product extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory;
 
     protected $fillable = ['nama_produk', 'harga', 'banyak_produk', 'kategori', 'deskripsi', 'gambar', 'slug'];
 
-    public function sluggable(): array
+    public function getRouteKeyName()
     {
-        return [
-            'slug' => [
-                'source' => 'nama_produk'
-            ]
-        ];
+        return 'slug';
     }
 }

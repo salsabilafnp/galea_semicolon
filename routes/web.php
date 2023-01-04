@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
@@ -25,7 +27,7 @@ Route::get('/', function () {
 });
 
 //products
-Route::get('/products', function () {
+Route::get('/productss', function () {
     return view('products', [
         "title" => "Products"
     ]);
@@ -62,12 +64,20 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     //dashboard
     Route::get('/dashboard', function () {
         return view('dashboard.index', [
-            "title" => "Dashboard"
+            "title" => "Dashboard",
+            //"newOrder" => ,
+            "admin" => User::where('role', 'admin')->get(),
+            //"stok_produk_tersedia" => Product::where('banyak_produk', '>', 0)->get()->count(),
+            //"stok_produk_habis" => Product::where('banyak_produk', '=', 0)->count()
         ]);
     });
 
     //our product
     Route::resource('/dashboard/products', DashboardProductsController::class);
-    //slug
-    Route::get('/dashboard/products/checkSlug', [DashboardProductsController::class, 'checkSlug']);
+    //detail
+    Route::get('/dashboard/products/{products:slug}', [DashboardProductsController::class, 'show']);
+    //edit
+    Route::get('/dashboard/products/{products:slug}/edit', [DashboardProductsController::class, 'edit']);
+    //delete
+    Route::post('/dashboard/products/{products:slug}', [DashboardProductsController::class, 'delete']);
 });
