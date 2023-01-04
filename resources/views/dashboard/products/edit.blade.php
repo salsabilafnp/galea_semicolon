@@ -1,97 +1,98 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Edit Post</h1>
-  </div>
+  <h2 class="text-center">Ubah Produk</h2>
 
-  <div class="col-lg-8">
-    <form method="POST" action="/dashboard/posts/{{ $post->slug }}" class="mb-5" enctype="multipart/form-data">
-      @method('put')
-      @csrf
-      <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-          required autofocus value="{{ old('title', $post->title) }}">
-        @error('title')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div>
-        @enderror
-      </div>
-      <div class="mb-3">
-        <label for="slug" class="form-label">Slug</label>
-        <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug"
-          readonly value="{{ old('slug', $post->slug) }}">
-        @error('slug')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div>
-        @enderror
-      </div>
-      <div class="mb-3">
-        <label for="category" class="form-label">Category</label>
-        <select class="form-select" name="category_id">
-          @foreach ($categories as $category)
-            @if (old('category_id', $post->category_id) == $category->id)
-              <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <form method="POST" action="/dashboard/products/{{ $products->slug }}" class="mb-5" enctype="multipart/form-data">
+        @method('put')
+        @csrf
+        {{-- Nama --}}
+        <div class="mb-3">
+          <label for="nama_produk" class="form-label">Nama Produk</label>
+          <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" id="nama_produk"
+            name="nama_produk" required autofocus value="{{ old('nama_produk', $products->nama_produk) }}">
+          @error('nama_produk')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+          @enderror
+        </div>
+        {{-- Harga --}}
+        <div class="mb-3">
+          <label for="harga" class="form-label">Harga</label>
+          <input type="number" class="form-control @error('harga') is-invalid @enderror" name="harga"
+            value="{{ old('harga', $products->harga) }}">
+          @error('harga')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+          @enderror
+        </div>
+        {{-- Stok --}}
+        <div class="mb-3">
+          <label for="banyak_produk" class="form-label">Stok</label>
+          <input type="number" class="form-control @error('banyak_produk') is-invalid @enderror" name="banyak_produk"
+            value="{{ old('banyak_produk', $products->banyak_produk) }}">
+          @error('banyak_produk')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+          @enderror
+        </div>
+        {{-- Kategori --}}
+        <div class="mb-3">
+          <label for="kategori" class="form-label">Kategori</label>
+          <select class="form-select" name="kategori">
+            <option disabled selected>Pilih Kategori</option>
+            @if (old('kategori', $products->kategori) == 'sport')
+              <option value="casual">Casual</option>
+              <option value="{{ $products->kategori }}" class="text-capitalize" selected>{{ $products->kategori }}
+              </option>
             @else
-              <option value="{{ $category->id }}">{{ $category->name }}</option>
+              <option value="{{ $products->kategori }}" class="text-capitalize" selected>{{ $products->kategori }}
+              <option value="sport">Sport</option>
             @endif
-          @endforeach
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="image" class="form-label">Post Image</label>
-        <input type="hidden" name="oldImage" value="{{ $post->image }}">
-        @if ($post->image)
-          <img src="{{ asset('storage/' . $post->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
-        @else
+          </select>
+        </div>
+        {{-- Gambar --}}
+        <div class="mb-3">
+          <label for="gambar" class="form-label">Gambar Produk</label>
           <img class="img-preview img-fluid mb-3 col-sm-5">
-        @endif
-        <input class="form-control  @error('image') is-invalid @enderror" type="file" id="image" name="image"
-          onchange="previewImage()">
-        @error('image')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div>
-        @enderror
-      </div>
-      <div class="mb-3">
-        <label for="body" class="form-label">Body</label>
-        @error('body')
-          <p>{{ $message }}</p>
-        @enderror
-        <input id="body" type="hidden" name="body" value="{{ old('body', $post->body) }}">
-        <trix-editor input="body"></trix-editor>
-      </div>
+          <input class="form-control  @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar"
+            onchange="previewImage()">
+          @error('gambar')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+          @enderror
+        </div>
+        {{-- Deskripsi --}}
+        <div class="mb-3">
+          <label for="deskripsi" class="form-label">Deskripsi Produk</label>
+          <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" required
+            autofocus>{{ old('deskripsi', $products->deskripsi) }}</textarea>
+          @error('deskripsi')
+            <p>{{ $message }}</p>
+          @enderror
+        </div>
 
-      <button type="submit" class="btn btn-primary">Update Post</button>
-    </form>
+        <button type="submit" class="btn btn-main">Ubah Produk</button>
+        <a href="/dashboard/products" class="btn btn-sec">Kembali</a>
+      </form>
+    </div>
   </div>
 
   <script>
-    const title = document.querySelector('#title');
-    const slug = document.querySelector('#slug');
-
-    title.addEventListener('change', function() {
-      fetch('/dashboard/posts/checkSlug?title=' + title.value)
-        .then(response => response.json())
-        .then(data => slug.value = data.slug)
-    });
-
-    document.addEventListener('trix-file-accept', function(e) {
-      e.preventDefault();
-    })
-
     function previewImage() {
-      const image = document.querySelector('#image');
+      const gambar = document.querySelector('#gambar');
       const imgPreview = document.querySelector('.img-preview');
 
       imgPreview.style.display = 'block';
 
       const oFReader = new FileReader();
-      oFReader.readAsDataURL(image.files[0]);
+      oFReader.readAsDataURL(gambar.files[0]);
 
       oFReader.onload = function(oFREvent) {
         imgPreview.src = oFREvent.target.result;

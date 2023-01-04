@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Order extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama_produk', 'harga', 'banyak_produk', 'kategori', 'deskripsi', 'gambar', 'slug'];
+    protected $guarded = ['id'];
 
     public function getRouteKeyName()
     {
-        return 'slug';
+        return 'kode_pesanan';
     }
 }

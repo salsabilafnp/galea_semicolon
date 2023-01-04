@@ -1,10 +1,13 @@
 <?php
 
+use App\Models\User;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardOrdersController;
 use App\Http\Controllers\DashboardProductsController;
 
 /*
@@ -20,8 +23,14 @@ use App\Http\Controllers\DashboardProductsController;
 
 //home
 Route::get('/', function () {
+    $products = Product::get()->toQuery()->paginate(4);
+    $products_kategori_casual = Product::where('kategori', 'casual')->get()->toQuery()->paginate(4);
+    $products_kategori_sport = Product::where('kategori', 'sport')->get()->toQuery()->paginate(4);
     return view('home', [
-        "title" => "Home"
+        "title" => "Home",
+        "products" => $products,
+        "products_kategori_casual" => $products_kategori_casual,
+        "products_kategori_sport" => $products_kategori_sport,
     ]);
 });
 
@@ -35,7 +44,7 @@ Route::get('/products', function () {
 //product
 Route::get('/product', function () {
     return view('product', [
-        "title" => "Name of Product"
+        "title" => "Name of Product",
     ]);
 });
 
@@ -66,10 +75,29 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     //dashboard
     Route::get('/dashboard', function () {
         return view('dashboard.index', [
-            "title" => "Dashboard"
+            "title" => "Dashboard",
+            //"newOrder" => ,
+            "admin" => User::where('role', 'admin')->get(),
+            "stok_produk_tersedia" => Product::where('banyak_produk', '>', 0)->get()->count(),
+            "stok_produk_habis" => Product::where('banyak_produk', '=', 0)->get()->count()
         ]);
     });
 
     //our product
     Route::resource('/dashboard/products', DashboardProductsController::class);
+    //detail
+    Route::get('/dashboard/products/{products:slug}', [DashboardProductsController::class, 'show']);
+    //edit
+    Route::get('/dashboard/products/{products:slug}/edit', [DashboardProductsController::class, 'edit']);
+    //delete
+    Route::post('/dashboard/products/{products:slug}', [DashboardProductsController::class, 'delete']);
+
+    //orders
+    Route::resource('/dashboard/orders', DashboardOrdersController::class);
+    //detail
+    Route::get('/dashboard/orders/{orders:kode_pesanan}', [DashboardOrdersController::class, 'show']);
+    //edit
+    Route::get('/dashboard/orders/{orders:kode_pesanan}/edit', [DashboardOrdersController::class, 'edit']);
+    //delete
+    Route::post('/dashboard/orders/{orders:kode_pesanan}', [DashboardOrdersController::class, 'delete']);
 });
