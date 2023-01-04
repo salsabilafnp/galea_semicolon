@@ -24,6 +24,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <p class="about" style="height:20em; overflow:auto">The AGV Pista GP RR Helmet is an
                                     exact replica of
                                     helmets worn by
