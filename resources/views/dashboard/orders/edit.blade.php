@@ -11,10 +11,10 @@
         @csrf
         {{-- Kode Pesanan --}}
         <div class="mb-3">
-          <label for="kode_pemesan" class="form-label">Kode Pemesan</label>
-          <input type="text" class="form-control @error('kode_pemesan') is-invalid @enderror" id="kode_pemesan"
-            readonly name="kode_pemesan" value="{{ old('kode_pemesan', $orders->kode_pesanan) }}">
-          @error('kode_pemesan')
+          <label for="kode_pesanan" class="form-label">Kode Pesanan</label>
+          <input type="text" class="form-control @error('kode_pesanan') is-invalid @enderror" id="kode_pesanan"
+            readonly name="kode_pesanan" value="{{ old('kode_pesanan', $orders->kode_pesanan) }}">
+          @error('kode_pesanan')
             <div class="invalid-feedback">
               {{ $message }}
             </div>
@@ -50,71 +50,80 @@
             <p>{{ $message }}</p>
           @enderror
         </div>
-        {{-- Nama Produk --}}
+        {{-- Produk --}}
         <div class="mb-3">
-          <label for="nama_produk" class="form-label">Nama Produk</label>
-          <select class="form-select" name="nama_produk">
-            <option disabled>Pilih Nama Produk</option>
+          <label for="id_produk" class="form-label">Produk</label>
+          <select class="form-select" name="id_produk">
+            <option disabled selected>Pilih Produk</option>
             @foreach ($products as $product)
-              @if ($product->nama_produk == $orders->nama_produk)
-                <option value="{{ $product->nama_produk }}" selected>{{ $product->nama_produk }}</option>
+              @if (old('id_produk', $orders->id_produk) == $product->id)
+                <option value="{{ $product->id }}" selected>{{ $product->nama_produk }}</option>
               @else
-                <option value="{{ $product->nama_produk }}">{{ $product->nama_produk }}</option>
+                <option value="{{ $product->id }}">{{ $product->nama_produk }}</option>
               @endif
             @endforeach
           </select>
-        </div>
-        {{-- Jumlah Produk --}}
-        <div class="mb-3">
-          <label for="jumlah_produk" class="form-label">Jumlah Produk</label>
-          <input type="number" class="form-control @error('jumlah_produk') is-invalid @enderror" name="jumlah_produk"
-            value="{{ old('jumlah_produk', $orders->jumlah_produk) }}">
-          @error('jumlah_produk')
-            <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-          @enderror
-        </div>
-        {{-- Ongkir --}}
-        <div class="mb-3">
-          <label for="ongkir" class="form-label">Ongkos Kirim</label>
-          <input type="number" class="form-control @error('ongkir') is-invalid @enderror" name="ongkir"
-            value="{{ old('ongkir', $orders->ongkir) }}">
-          @error('ongkir')
-            <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-          @enderror
-        </div>
-        {{-- Metode Bayar --}}
-        <div class="mb-3">
-          <label for="metode_bayar" class="form-label">Metode Bayar</label>
-          <select class="form-select" name="metode_bayar">
-            <option disabled>Pilih Metode Bayar</option>
-            @if ($orders->metode_bayar == 'COD')
-              <option value="COD" selected>COD</option>
-              <option value="Transfer">Transfer</option>
-            @else
-              <option value="COD">COD</option>
-              <option value="Transfer" selected>Transfer</option>
-            @endif
-          </select>
-        </div>
-        {{-- Bukti Bayar --}}
-        <div class="mb-3">
-          <label for="bukti_bayar" class="form-label">Bukti Bayar</label>
-          <img class="img-preview img-fluid mb-3 col-sm-5">
-          <input class="form-control  @error('bukti_bayar') is-invalid @enderror" type="file" id="bukti_bayar"
-            name="bukti_bayar" onchange="previewImage()">
-          @error('bukti_bayar')
-            <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-          @enderror
-        </div>
+          {{-- Jumlah Produk --}}
+          <div class="mb-3">
+            <label for="jumlah_produk" class="form-label">Jumlah Produk</label>
+            <input type="number" class="form-control @error('jumlah_produk') is-invalid @enderror" name="jumlah_produk"
+              value="{{ old('jumlah_produk', $orders->jumlah_produk) }}">
+            @error('jumlah_produk')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
+          {{-- Ongkir --}}
+          <div class="mb-3">
+            <label for="ongkir" class="form-label">Ongkos Kirim</label>
+            <input type="number" class="form-control @error('ongkir') is-invalid @enderror" name="ongkir"
+              value="{{ old('ongkir', $orders->ongkir) }}">
+            @error('ongkir')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
+          {{-- Metode Bayar --}}
+          <div class="mb-3">
+            <label for="metode_bayar" class="form-label">Metode Bayar</label>
+            <select class="form-select" name="metode_bayar">
+              <option disabled>Pilih Metode Bayar</option>
+              @if ($orders->metode_bayar == 'COD')
+                <option value="COD" selected>COD</option>
+                <option value="Transfer">Transfer</option>
+              @else
+                <option value="COD">COD</option>
+                <option value="Transfer" selected>Transfer</option>
+              @endif
+            </select>
+          </div>
+          {{-- Bukti Bayar --}}
+          <div class="mb-3">
+            <label for="bukti_bayar" class="form-label">Bukti Bayar</label>
+            <img class="img-preview img-fluid mb-3 col-sm-5">
+            <input class="form-control  @error('bukti_bayar') is-invalid @enderror" type="file" id="bukti_bayar"
+              name="bukti_bayar" onchange="previewImage()">
+            @error('bukti_bayar')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+            @enderror
+          </div>
+          {{-- Status Pesanan --}}
+          <div class="mb-3">
+            <label for="status_pesanan" class="form-label">Status Pesanan</label>
+            <select class="form-select" name="status_pesanan">
+              <option disabled selected>Pilih Status Pesanan</option>
+              <option value="Dikemas">Dikemas</option>
+              <option value="Dikirim">Dikirim</option>
+              <option value="Terkirim">Terkirim</option>
+            </select>
+          </div>
 
-        <button type="submit" class="btn btn-main">Ubah Pesanan</button>
-        <a href="/dashboard/orders" class="btn btn-sec">Kembali</a>
+          <button type="submit" class="btn btn-main">Ubah Pesanan</button>
+          <a href="/dashboard/orders" class="btn btn-sec">Kembali</a>
 
       </form>
     </div>

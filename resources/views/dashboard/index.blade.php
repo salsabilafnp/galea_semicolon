@@ -39,7 +39,7 @@
           <div class="col-md-8 col-sm-7">
             <div class="card-body">
               <h3 class="card-title">Pesanan</h3>
-              <p class="card-text fw-bold">Dikemas: 10</p>
+              <p class="card-text fw-bold">Dikemas: {{ $order_dikemas }}</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-3 text-center">
@@ -54,7 +54,7 @@
           <div class="col-md-8 col-sm-7">
             <div class="card-body">
               <h3 class="card-title">Pesanan</h3>
-              <p class="card-text text-primary fw-bold">Dikirim: 10</p>
+              <p class="card-text text-primary fw-bold">Dikirim: {{ $order_dikirim }}</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-3 text-center">
@@ -68,24 +68,27 @@
       {{-- Info Pesanan Terbaru --}}
       <div class="col-md-8 text-center card mb-2">
         <h2 class="my-2">Pesanan Terbaru</h2>
-        <table class="table table-hover">
+        <table class="table table-hover table-sm">
           <thead>
             <tr>
               <th scope="col">No.</th>
-              <th scope="col">Tanggal</th>
               <th scope="col">Kode Pesanan</th>
               <th scope="col">Nama Pembeli</th>
+              <th scope="col">Info Produk</th>
+              <th scope="col">Total Bayar</th>
             </tr>
           </thead>
           <tbody>
-            @for ($i = 1; $i <= 5; $i++)
+            @foreach ($orders as $order)
               <tr>
-                <th scope="row">{{ $i }}</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $order->kode_pesanan }}</td>
+                <td>{{ $order->nama_pemesan }}</td>
+                <td>{{ $products->where('id', $order->id_produk)->value('nama_produk') }} - {{ $order->jumlah_produk }}
+                </td>
+                <td>{{ $order->total_bayar }}</td>
               </tr>
-            @endfor
+            @endforeach
           </tbody>
         </table>
       </div>

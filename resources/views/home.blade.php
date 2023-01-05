@@ -76,7 +76,6 @@
     <div class="categories my-5">
         {{-- Heading for Category Section --}}
         <h3 class="display-6 text-center pt-5">Our Products</h3>
-
         {{-- Category 1, nanti ganti namanya sesuai kategori yang ada --}}
         <div class="category-1 text-center my-3">
             <div class="row justify-content-evenly">

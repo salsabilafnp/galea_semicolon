@@ -32,6 +32,21 @@
         </div>
       </div>
     </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0 align-items-center">
+          <div class="col-md-8 col-sm-7">
+            <div class="card-body">
+              <h3 class="card-title">Pesanan</h3>
+              <p class="card-text fw-bold">Dikemas: {{ $order_dikemas }}</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-3 text-center">
+            <i class="h1 bi bi-clipboard-data-fill"></i>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="col-md-3">
       <a href="/dashboard/orders/create" class="btn btn-main">Tambah Pesanan</a>
     </div>
@@ -68,9 +83,9 @@
               <th scope="row">{{ $loop->iteration }}</th>
               <td>{{ $order->kode_pesanan }}</td>
               <td>{{ $order->nama_pemesan }}</td>
-              <td>{{ $order->nama_produk }} - {{ $order->jumlah_produk }}</td>
+              <td>{{ $products->where('id', $order->id_produk)->value('nama_produk') }} - {{ $order->jumlah_produk }}</td>
               <td>{{ $order->total_bayar }}</td>
-              <td>{{ $order->status_pesanan }}</td>
+              <td class="text-capitalize">{{ $order->status_pesanan }}</td>
               <td>
                 <a href="/dashboard/orders/{{ $order->kode_pesanan }}" class="btn btn-sm btn-sec">
                   <i class="bi bi-eye-fill"></i>

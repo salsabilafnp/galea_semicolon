@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -83,10 +84,13 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard.index', [
             "title" => "Dashboard",
-            //"newOrder" => ,
+            "orders" => Order::latest()->paginate(5),
+            "products" => Product::all(),
             "admin" => User::where('role', 'admin')->get(),
             "stok_produk_tersedia" => Product::where('banyak_produk', '>', 0)->get()->count(),
-            "stok_produk_habis" => Product::where('banyak_produk', '=', 0)->get()->count()
+            "stok_produk_habis" => Product::where('banyak_produk', '=', 0)->get()->count(),
+            "order_dikemas" => Order::where('status_pesanan', 'dikemas')->get()->count(),
+            "order_dikirim" => Order::where('status_pesanan', 'dikirim')->get()->count(),
         ]);
     });
 

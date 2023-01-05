@@ -11,6 +11,11 @@ class Product extends Model
 
     protected $fillable = ['nama_produk', 'harga', 'banyak_produk', 'kategori', 'deskripsi', 'gambar', 'slug'];
 
+    public function orders()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

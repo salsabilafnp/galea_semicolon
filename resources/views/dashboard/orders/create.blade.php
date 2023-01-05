@@ -39,11 +39,15 @@
         </div>
         {{-- Nama Produk --}}
         <div class="mb-3">
-          <label for="nama_produk" class="form-label">Nama Produk</label>
-          <select class="form-select" name="nama_produk">
-            <option disabled selected>Pilih Nama Produk</option>
+          <label for="id_produk" class="form-label">Produk</label>
+          <select class="form-select" name="id_produk">
+            <option disabled selected>Pilih Produk</option>
             @foreach ($products as $product)
-              <option value="{{ $product->nama_produk }}">{{ $product->nama_produk }}</option>
+              @if (old('id_produk') == $product->id)
+                <option value="{{ $product->id }}" selected>{{ $product->nama_produk }}</option>
+              @else
+                <option value="{{ $product->id }}">{{ $product->nama_produk }}</option>
+              @endif
             @endforeach
           </select>
         </div>
