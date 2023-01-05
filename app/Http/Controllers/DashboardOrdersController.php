@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardOrdersController extends Controller
 {
@@ -18,6 +19,7 @@ class DashboardOrdersController extends Controller
         return view('dashboard.orders.index', [
             "title" => "Pesanan",
             "orders" => Order::all(),
+            "products" => Product::all(),
             "order_dikemas" => Order::where('status_pesanan', 'dikemas')->get()->count(),
             "order_dikirim" => Order::where('status_pesanan', 'dikirim')->get()->count(),
         ]);
@@ -45,40 +47,27 @@ class DashboardOrdersController extends Controller
     public function store(Request $request)
     {
         //validate form
-        $this->$request->validate([
+        $validatedData = $request->validate([
             'nama_pemesan' => 'required',
-            'nomor_hp' => 'required',
+            'nomor_hp' => 'required|min:10|max:15',
             'alamat' => 'required',
-            'nama_produk' => 'required',
+            'id_produk' => 'required',
             'jumlah_produk' => 'required',
             'ongkir' => 'required',
             'metode_bayar' => 'required',
             'bukti_bayar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        $kode_pesanan = "GAL" . $request->id;
-        $produk = Product::where("nama_produk", $request->nama_produk)->value('harga');
-        $bayar_produk = $produk * $request->jumlah_produk;
-        $total_bayar = $bayar_produk + $request->ongkir;
+        $validatedData['kode_pesanan'] = "GAL" . random_int(001, 100);
+        $harga_produk = Product::where('id', $request->id_produk)->value('harga');
+        $validatedData['total_bayar'] = ($harga_produk * $request->jumlah_produk) + $request->ongkir;
 
         //upload image
         $gambar = $request->file('bukti_bayar');
-        $gambar->storeAs('public/orders/', $gambar->hashName());
+        $gambar->storeAs('public/orders/', $validatedData['kode_pesanan']);
 
         //create post
-        Product::create([
-            'kode_pesanan' => $kode_pesanan,
-            'nama_pemesan' => $request->nama_pesanan,
-            'nomor_hp' => $request->nomor_hp,
-            'alamat' => $request->alamat,
-            'nama_produk' => $request->nama_produk,
-            'jumlah_produk' => $request->jumlah_produk,
-            'bayar_produk' => $bayar_produk,
-            'ongkir' => $request->ongkir,
-            'total_bayar' => $total_bayar,
-            'metode_bayar' => $request->metode_bayar,
-            'bukti_bayar' => $gambar->hashName()
-        ]);
+        Order::create($validatedData);
 
         //redirect to index
         return redirect()->route('orders.index')->with(['success' => 'Data Berhasil Disimpan!']);
@@ -93,8 +82,9 @@ class DashboardOrdersController extends Controller
     public function show(Order $order)
     {
         return view('dashboard.orders.show', [
-            "title" => $order->kode_pesanan,
+            "title" => "Detail " . $order->kode_pesanan,
             "orders" => $order,
+            "products" => Product::all()
         ]);
     }
 
@@ -107,7 +97,7 @@ class DashboardOrdersController extends Controller
     public function edit(Order $order)
     {
         return view('dashboard.orders.edit', [
-            "title" => "Ubah Pesanan" . $order->kode_pesanan,
+            "title" => "Ubah Pesanan " . $order->kode_pesanan,
             "orders" => $order,
             "products" => Product::all()
         ]);
@@ -122,7 +112,46 @@ class DashboardOrdersController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        //validate form
+        $validatedData = $request->validate([
+            'kode_pesanan' => 'required',
+            'nama_pemesan' => 'required',
+            'nomor_hp' => 'required|min:10|max:15',
+            'alamat' => 'required',
+            'id_produk' => 'required',
+            'jumlah_produk' => 'required',
+            'ongkir' => 'required',
+            'metode_bayar' => 'required',
+            'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status_pesanan' => 'required',
+        ]);
+
+        $harga_produk = Product::where('id', $request->id_produk)->value('harga');
+        $validatedData['total_bayar'] = ($harga_produk * $request->jumlah_produk) + $request->ongkir;
+
+
+        //check if image is uploaded
+        if ($request->hasFile('bukti_bayar')) {
+
+            //upload new gambar
+            $gambar = $request->file('bukti_bayar');
+            $gambar->storeAs('public/orders/', $validatedData['kode_pesanan']);
+
+            //delete old gambar
+            Storage::delete('public/orders/', $validatedData['bukti_bayar']);
+
+            //update order with new gambar
+            Order::where('kode_pesanan', $order->kode_pesanan)->update($validatedData);
+        } else {
+            //update produk without gambar
+            $order->update([
+                'title'     => $request->title,
+                'content'   => $request->content
+            ]);
+        }
+
+        //redirect to index
+        return redirect()->route('orders.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
@@ -133,6 +162,8 @@ class DashboardOrdersController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        Order::destroy($order->id);
+
+        return redirect()->route('orders.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

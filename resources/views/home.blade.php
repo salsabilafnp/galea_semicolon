@@ -57,7 +57,7 @@
               <h6>{{ $barang->harga }}</h6>
             </a>
             {{-- add-to-cart --}}
-            <a href="/" class="btn btn-sec">
+            <a href="" class="btn btn-sec">
               <i class="bi bi-cart-plus"></i> Add To Cart
             </a>
           </div>
@@ -75,15 +75,15 @@
     {{-- Heading for Category Section --}}
     <h3 class="display-6 text-center">Our Products</h3>
 
-    {{-- Category 1, nanti ganti namanya sesuai kategori yang ada --}}
+    {{-- Casual Products --}}
     <div class="category-1 text-center my-3">
       <div class="row justify-content-evenly">
         <div class="col-md-2 align-self-center">
           <div class="card border-0 shadow p-2 mb-2 text-center">
             {{-- Gambar untuk Category 1 --}}
             <img src="https://source.unsplash.com/100x100?motorcycle" class="card-img my-1">
-            {{-- Lihat lebih banyak berdasarkan kategori 1 --}}
-            <a href="/" class="btn btn-main">Category 1</a>
+            {{-- Nama Kategori --}}
+            <h4>Casual</h4>
           </div>
         </div>
         {{-- Produk yang tampil berdasarkan kategori 1 --}}
@@ -107,15 +107,15 @@
       </div>
     </div>
 
-    {{-- Category 2, nanti ganti namanya sesuai kategori yang ada --}}
+    {{-- Sport --}}
     <div class="category-2 text-center my-3">
       <div class="row justify-content-evenly">
         <div class="col-md-2 align-self-center">
           <div class="card border-0 shadow p-2 mb-2 text-center">
             {{-- Gambar untuk Category 2 --}}
             <img src="https://source.unsplash.com/100x100?helmet" class="card-img my-1">
-            {{-- Lihat lebih banyak berdasarkan kategori 1 --}}
-            <a href="/" class="btn btn-main">Category 2</a>
+            {{-- Nama Kategori --}}
+            <h4>Sport</h4>
           </div>
         </div>
         {{-- Produk yang tampil berdasarkan kategori 2 --}}

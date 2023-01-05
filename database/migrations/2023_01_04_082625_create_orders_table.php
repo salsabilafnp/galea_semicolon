@@ -15,18 +15,17 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_pesanan');
+            $table->string('kode_pesanan')->unique();
             $table->string('nama_pemesan');
             $table->string('nomor_hp');
             $table->string('alamat');
-            $table->string('nama_produk');
+            $table->foreignId('id_produk');
             $table->integer('jumlah_produk');
-            $table->integer('bayar_produk');
             $table->integer('ongkir');
             $table->integer('total_bayar');
             $table->string('metode_bayar');
             $table->string('bukti_bayar');
-            $table->string('status_pesanan')->default('dikemas');
+            $table->string('status_pesanan')->default('Dikemas');
             $table->timestamps();
         });
     }

@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('nama_produk');
-            $table->integer('harga');
-            $table->integer('banyak_produk');
+            $table->integer('harga')->nullable();
+            $table->integer('banyak_produk')->nullable();
             $table->enum('kategori', ["casual", "sport"])->default('sport');
             $table->string('deskripsi');
             $table->string('gambar')->nullable();

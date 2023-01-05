@@ -11,6 +11,11 @@ class Order extends Model
 
     protected $guarded = ['id'];
 
+    public function id_produk()
+    {
+        return $this->hasMany(Product::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'kode_pesanan';
