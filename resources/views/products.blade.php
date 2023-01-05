@@ -54,9 +54,134 @@
 
                         <div class="category-1 text-center my-3">
                             <div class="row justify-content-evenly">
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
 
+                                        <a href="/product" class="text-decoration-none text-dark">
 
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
 
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="card border-0 shadow p-2 mb-2 text-center">
+
+                                        <a href="/product" class="text-decoration-none text-dark">
+
+                                            <img src="https://source.unsplash.com/100x100?motorcycle-helmet"
+                                                class="card-img my-1">
+                                            <h5 class="fw-bold text-capitalize">AGV PISTA GP R</h5>
+                                            <h6>Rp 15.999.999</h6>
+                                        </a>
+
+                                        <a href="/" class="btn btn-sec">
+                                            <i class="bi bi-cart-plus"></i> Add To Cart
+                                        </a>
+                                    </div>
+                                </div>
                                 <div class="col-md-3 col-sm-4">
                                     <div class="card border-0 shadow p-2 mb-2 text-center">
 
@@ -188,9 +313,6 @@
 
                             </div>
                         </div>
-
-
-
                     </div>
                     <!-- /store products -->
                 </div>

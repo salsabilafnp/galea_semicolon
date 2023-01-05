@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardOrdersController;
 use App\Http\Controllers\DashboardProductsController;
@@ -35,7 +36,7 @@ Route::get('/', function () {
 });
 
 //products
-Route::get('/productss', function () {
+Route::get('/products', function () {
     return view('products', [
         "title" => "Products"
     ]);
@@ -44,7 +45,7 @@ Route::get('/productss', function () {
 //product
 Route::get('/product', function () {
     return view('product', [
-        "title" => "Name of Product"
+        "title" => "Name of Product",
     ]);
 });
 
@@ -52,6 +53,13 @@ Route::get('/product', function () {
 Route::get('/about', function () {
     return view('about', [
         "title" => "About Galea"
+    ]);
+});
+
+//setting
+Route::get('/setting', function () {
+    return view('setting', [
+        "title" => "Setting Profile"
     ]);
 });
 
@@ -66,6 +74,9 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 // Cart
 Route::get('/cart', [CartController::class, 'index']);
+
+// Checkout
+Route::get('/checkout', [CheckoutController::class, 'index']);
 
 //admin
 Route::middleware(['auth', 'checkRole:admin'])->group(function () {
@@ -100,4 +111,14 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::get('/dashboard/orders/{orders:kode_pesanan}/edit', [DashboardOrdersController::class, 'edit']);
     //delete
     Route::post('/dashboard/orders/{orders:kode_pesanan}', [DashboardOrdersController::class, 'delete']);
+});
+
+//user
+Route::middleware(['auth', 'checkRole:user'])->group(function () {
+    //setting
+    Route::get('/setting', function () {
+        return view('setting', [
+            "title" => "Setting Profile"
+        ]);
+    });
 });
